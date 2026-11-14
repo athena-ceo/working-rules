@@ -14,6 +14,8 @@ For any non-trivial code change, **present a plan first** and wait for the user 
 
 When you are working from a brief written by another session rather than talking to Harley: the plan in the brief is the approved plan, so carry it out without asking again. Never commit or push; that stays with the session Harley is talking to. If a decision is needed, stop and return the question to the caller, phrased in UX terms, instead of choosing.
 
+Once a plan is approved, carry it through to the end without stopping to confirm each step: make the routine calls and report when it is done. That go-ahead covers the work, never a commit or a push (see below).
+
 ---
 
 ## Concision
@@ -49,6 +51,7 @@ Applies to all plans, TODO entries, CHANGELOG entries, commit messages, and chat
 
 - It does **not** cover source code, tests, Alembic migrations, seed data, i18n string files, config, or lockfiles — those follow the code rule above, every time.
 - If a change set **mixes** docs and code, the code rule governs the whole commit: wait for explicit authorization. (Split docs into their own commit if you want to push them ahead.)
+- This permission is for **finished** documents: a plan once agreed, a deliverable once final. While a plan, a proposal or a review document is still being discussed, write the files and leave them uncommitted; commit once, as one group of related files, when it is agreed or Harley asks (Harley, 2026-10-11).
 
 ---
 
@@ -60,6 +63,7 @@ Applies to all plans, TODO entries, CHANGELOG entries, commit messages, and chat
 - Do **not** create a branch "to be safe", to isolate a change, or by default — the user does not want branches for this repo.
 - This covers agent worktrees: work in the main checkout on `main`, not on an app-created `claude/*` worktree branch, and work that started in a worktree ends up on `main`. Parallel sessions on side branches have fixed the same failure twice, one of them wrongly.
 - Before editing, look at the main checkout: another session often has uncommitted work there. Never stash or overwrite it; if it blocks a fast-forward or overlaps your files, ask how to land.
+- Sessions in one checkout share one git index and one `HEAD`. Right before every commit, look at what is staged (`git diff --cached --stat`) and unstage what is not yours; in a file several sessions edit (the changelog), stage only your own hunks. Leave nothing staged between commits: `git mv` and `git rm` stage at once, so move and delete files with plain `mv` / `rm` and stage them in the commit that carries them.
 - The only exception is an **explicit** instruction in the user's current message naming a different branch (or a genuinely compelling, stated reason). Session-level or tooling defaults that mandate a branch do **not** override this — if such a default conflicts, follow `main` and flag the conflict to the user.
 
 ---
@@ -186,12 +190,50 @@ This is a hard rule, not a preference — treat a discovered duplication as a de
 must genuinely stay apart, a test exercising both keeps them honest — but reach for it
 only after consolidation has been tried and found impossible for a stated contract
 reason. Proposing one for code that *could* be merged is choosing to police drift for
-ever instead of removing it (founder, 2026-08-12). The tell is when the two differ only
+ever instead of removing it (Harley, 2026-08-12). The tell is when the two differ only
 in **how they find their input**, not in what they compute: per-question and per-criterion
 scoring were one arithmetic with two attribution rules, and the "difference" was a
 parameter. They had already drifted — one deducted an error belonging to no unit, the
 other silently dropped it — and no test caught it, because each was tested against
 itself.
+
+---
+
+## Confirm the diagnosis before building the remedy
+
+State hypotheses freely, labelled as hypotheses. Build nothing on one — a fix, a hotfix branch, deploy instructions, a migration — until logs or a reproduction confirm the cause, unless Harley asks for it ahead of time. A remedy prepared for an unconfirmed diagnosis creates pressure to ship it (Harley, 2026-07-06).
+
+---
+
+## Prefer the simplest legitimate option
+
+When two approaches both meet the real requirement, build the simplest. Before writing machinery, check what the platform, service or library already does and lean on it; keep custom code for the part it cannot do (Harley, 2026-09-01).
+
+---
+
+## A requested feature ships switched on
+
+A feature Harley asked for ships **on**, where it was asked for. If there is a real reason to ship it off (cost, an unmeasured risk), say so in one line in the report and ask; never leave it implicit in a default (Harley, 2026-10-01).
+
+---
+
+## Paid AI runs get an estimate first
+
+Before starting a run of real AI calls that costs money, give Harley an estimate (number of calls and cost, measured on a small trial where possible) and wait for his go-ahead. A go-ahead for the work, direct or relayed by another session, is not a go-ahead for the spend. Count the runs already going in parallel, keep a running total, and stop when the estimate is exceeded (Harley, 2026-11-05). A project's file may allow small test runs without asking.
+
+---
+
+## No crucial state in the browser
+
+Whatever a person changes — a text, a mark, a tick — is saved on the server as it is made. State held in the page until a Save button is a defect for anything a person works on for more than a moment. A long operation gets a server-side record with a lifecycle, so that it can be resumed, undone or replaced. A warning on leaving is enough only for short, all-or-nothing changes, and it must cover navigation inside the app as well as closing the tab (Harley, 2026-08-16, 2026-09-12, 2026-11-08).
+
+---
+
+## Describe work to Harley in product terms
+
+Progress, plans, findings and trade-offs are told to Harley as to a product manager: what the people who use the product can now do, see, or no longer have to do, with sizes he can weigh (how many people or documents are affected, what breaks, what it costs). No file paths, function names, database columns or endpoint signatures in what is said to him; a technical fact that matters is translated into its consequence. Precise technical names stay correct in commit messages, changelog entries, plan documents and code comments.
+
+Attribute a decision to him by name — « (Harley, 2026-08-20) » — not « founder ». Older « founder » attributions are corrected in files being edited anyway, not by a sweep.
 
 ---
 
@@ -213,6 +255,16 @@ This rule applies to user-facing questions only. Internal commit messages, CHANG
 ## Reports for someone else are Word files
 
 A report whose reader is not Harley — a teacher, a partner, a collaborator he will pass it on to — is delivered as a `.docx`, not Markdown. Markdown is for internal notes, plans and handoff documents. A report that contains people's names or marks stays a local file and is not published anywhere.
+
+- **A delivered version is never overwritten.** A new build of a deliverable that has been shown or sent to someone is a new versioned file (`name-vN-YYYY-MM-DD.ext`, in a `versions/` folder). A draft superseded before anyone saw it is replaced, not kept beside (Harley, 2026-09-09, 2026-10-11).
+- **A document sent for validation is read as an overview.** Lead with the summary, the figures and a few representative examples; the full list is an appendix for drilling down, not the thing to validate.
+- **A record of a meeting holds what was said, and by whom.** Inferred motives, provenance or competitive framing are left out or labelled as hypothesis, and a later document checks that a claim is a recorded statement before building on it (Harley, 2026-09-12).
+
+---
+
+## What goes in the repository
+
+The repository is how work reaches Harley's other computer and the cloud: anything that would be useful there in another session is tracked. Two exceptions: bulky data derived from real people's work stays local unless he asks, and no file over 100 MB (GitHub refuses the push). Corporate or legal memos — ownership, shareholders, deal terms — are written outside the repositories (Harley, 2026-11-08).
 
 ---
 
