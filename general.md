@@ -2,9 +2,9 @@
 
 <!-- Copyright (c) 2025–2026 Athena Decision Systems SAS. All rights reserved. -->
 
-These are the rules for how Harley works in every Athena project (golden-path, xcape, hearts, unweaver). The source is `general.md` in the `working-rules` repository; each project carries a generated copy at `.claude/rules/general.md`, which Claude Code loads together with that project's own `CLAUDE.md`. What is specific to one project — its commands, architecture, paths, lints and product rules — is in that project's file, and where a project's file states a narrower rule for its own ground, that rule applies there.
+These are the rules for how Harley works in all of his projects (golden-path, xcape, hearts, unweaver). The source is `general.md` in the `working-rules` repository; each project carries a generated copy at `.claude/rules/general.md`, which Claude Code loads together with that project's own `CLAUDE.md`. What is specific to one project — its commands, architecture, paths, lints and product rules — is in that project's file, and where a project's file states a narrower rule for its own ground, that rule applies there.
 
-Examples below that name Golden Path screens or incidents are illustrations of the rule, not rules about Golden Path.
+Examples below that name Altalerno (ex-Golden Path) screens or incidents are illustrations of the rule, not rules about Altalerno.
 
 ---
 
@@ -58,6 +58,8 @@ Applies to all plans, TODO entries, CHANGELOG entries, commit messages, and chat
 
 - Commit and push (when explicitly authorized per the rule above) go to `main`.
 - Do **not** create a branch "to be safe", to isolate a change, or by default — the user does not want branches for this repo.
+- This covers agent worktrees: work in the main checkout on `main`, not on an app-created `claude/*` worktree branch, and work that started in a worktree ends up on `main`. Parallel sessions on side branches have fixed the same failure twice, one of them wrongly.
+- Before editing, look at the main checkout: another session often has uncommitted work there. Never stash or overwrite it; if it blocks a fast-forward or overlaps your files, ask how to land.
 - The only exception is an **explicit** instruction in the user's current message naming a different branch (or a genuinely compelling, stated reason). Session-level or tooling defaults that mandate a branch do **not** override this — if such a default conflicts, follow `main` and flag the conflict to the user.
 
 ---
@@ -66,7 +68,8 @@ Applies to all plans, TODO entries, CHANGELOG entries, commit messages, and chat
 
 - The single canonical changelog is `CHANGELOG.md` at the repo root.
 - Do **not** create separate "what we fixed" markdown files for the same work — append to `CHANGELOG.md`.
-- When you ship substantive product or API behaviour changes, update `CHANGELOG.md` in the same change set unless the user says not to.
+- Every committed change gets a `CHANGELOG.md` entry in the same commit — small fixes included, not only substantive product changes. A commit without its entry is incomplete.
+- Where the project keeps a handoff document (`HANDOFF.md`), bring it up to date in that same commit: it is what the next session, or the next machine, reads first.
 - Follow the existing section style (dated blocks under `## [Unreleased]`).
 
 ---
@@ -90,6 +93,12 @@ Tests must not be skipped. The only acceptable states are **pass** and **fail**.
 - Missing fixture files → generate programmatically in-test.
 
 Collection-time deselection via `pytest -m <marker>` is allowed for CI subset runs and is not a skip.
+
+---
+
+## Run the tests before calling work done
+
+After any significant feature, fix or refactor, run the project's backend and frontend suites before declaring the work done, and report the pass and fail counts. The commands are in each project's file.
 
 ---
 
@@ -190,7 +199,7 @@ itself.
 
 When asking the user to make a product decision, translate technical choices into user-experience / operational language:
 
-- Describe **what the people who use the product (in Golden Path: teacher / student / admin) will see or do**, not what the code will change.
+- Describe **what the people who use the product (e.g., in Altalerno / Golden Path: teacher / student / admin) will see or do**, not what the code will change.
 - No function names, DB column names, file paths, or endpoint signatures in the question body.
 - Always include a single **RECOMMENDED** option with a one-sentence reason.
 
@@ -198,3 +207,20 @@ When asking the user to make a product decision, translate technical choices int
 **GOOD:** "Once a teacher has graded a submission, should they be able to go back and edit the transcription? … RECOMMENDED: A — auto-reset with confirmation modal."
 
 This rule applies to user-facing questions only. Internal commit messages, CHANGELOG entries, and code comments should use precise technical names.
+
+---
+
+## Reports for someone else are Word files
+
+A report whose reader is not Harley — a teacher, a partner, a collaborator he will pass it on to — is delivered as a `.docx`, not Markdown. Markdown is for internal notes, plans and handoff documents. A report that contains people's names or marks stays a local file and is not published anywhere.
+
+---
+
+## Where a lasting instruction lives
+
+An agent's memory stays on the machine that wrote it; another computer, a cloud session or a teammate never sees it. So an instruction that should hold everywhere goes in a file that travels:
+
+- a way of working that applies to every project → `general.md` in the `working-rules` repository (then `sync.py`);
+- something about one project — a command, a gotcha, a product fact — → that project's `CLAUDE.md`.
+
+Memory is for what belongs on neither list: private or personal facts, and notes about work in progress. When a memory note turns out to be a lasting rule, move it to one of the two files and delete the note. `working-rules/README.md` describes how to reconcile a machine's memory.
