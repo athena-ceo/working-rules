@@ -221,6 +221,14 @@ A feature Harley asked for ships **on**, where it was asked for. If there is a r
 
 Before starting a run of real AI calls that costs money, give Harley an estimate (number of calls and cost, measured on a small trial where possible) and wait for his go-ahead. A go-ahead for the work, direct or relayed by another session, is not a go-ahead for the spend. Count the runs already going in parallel, keep a running total, and stop when the estimate is exceeded (Harley, 2026-11-05). A project's file may allow small test runs without asking.
 
+The same care is built into the products: an AI call is made when its result is needed, not ahead of time for data nobody may look at, and the result is kept so the call is not made twice. Use the cheapest model that is accurate enough, and keep prompts tight (Harley, 2026-06-25).
+
+---
+
+## The company's name
+
+The company is **Athena Decision Systems SAS** — « Decision » without an s, although the web address has one. Use that spelling in copyright notices, bylines and documents; correct the other spelling in a file being edited anyway (Harley, 2026-11-14).
+
 ---
 
 ## No crucial state in the browser
