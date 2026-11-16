@@ -237,6 +237,17 @@ Whatever a person changes — a text, a mark, a tick — is saved on the server 
 
 ---
 
+## A screen shows only what its user needs
+
+A screen carries what the person using it needs to act or to understand, and nothing more. The request, the plan or the reasoning behind a feature is not screen content: a label that explains where a value came from, a tooltip that restates the design, a badge that records a provenance nobody acts on. Before adding a word, a pill, a tooltip or a line of helper text, ask what the person would do differently with it; if nothing, leave it out (Harley, 2026-11-16).
+
+- **A badge or pill marks something the person acts on or must notice.** « choisi par ta classe » beside a concours countdown is provenance, not information: noise.
+- **A tooltip answers the one question the person is likely to have, in a sentence.** It is not the place for the rules of the feature, its edge cases or how it is computed; those belong in the guide, if anywhere.
+- **Helper text that repeats the heading, the button or the obvious is removed.**
+- When unsure whether an element earns its place, leave it out and say so in the report; adding it back is cheap, clutter accumulates.
+
+---
+
 ## Describe work to Harley in product terms
 
 Progress, plans, findings and trade-offs are told to Harley as to a product manager: what the people who use the product can now do, see, or no longer have to do, with sizes he can weigh (how many people or documents are affected, what breaks, what it costs). No file paths, function names, database columns or endpoint signatures in what is said to him; a technical fact that matters is translated into its consequence. Precise technical names stay correct in commit messages, changelog entries, plan documents and code comments.
