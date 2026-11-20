@@ -221,6 +221,8 @@ A feature Harley asked for ships **on**, where it was asked for. If there is a r
 
 Before starting a run of real AI calls that costs money, give Harley an estimate (number of calls and cost, measured on a small trial where possible) and wait for his go-ahead. A go-ahead for the work, direct or relayed by another session, is not a go-ahead for the spend. Count the runs already going in parallel, keep a running total, and stop when the estimate is exceeded (Harley, 2026-11-05). A project's file may allow small test runs without asking.
 
+**A test run estimated at $2 or less needs no go-ahead** (Harley, 2026-11-20): work out the estimate, run it, and report what was spent. Above $2, or when the estimate cannot be bounded, ask first as above. The running total still counts: several small runs for one piece of work are added up, and the question is asked when their sum passes $2.
+
 The same care is built into the products: an AI call is made when its result is needed, not ahead of time for data nobody may look at, and the result is kept so the call is not made twice. Use the cheapest model that is accurate enough, and keep prompts tight (Harley, 2026-06-25).
 
 ---
