@@ -199,6 +199,19 @@ itself.
 
 ---
 
+## One computation, in one place
+
+Any non-trivial computation — a mark, a total, a status, a count, a price, how a value is rounded or written out — is performed in exactly one place, stored (when it needs storing) in exactly one place, and called wherever it is needed (Harley, 2026-11-21). This is the rule above applied to values: a second place that works the same thing out, rounds it again or formats it by hand is a defect, even when today it gives the same answer.
+
+- **A reader never recomputes.** A screen, a report, an e-mail or an export asks the one function, or reads the one stored value that function wrote; it does not add the parts up again, round again or choose its own decimals.
+- **How a value is written out is a computation too.** One formatter per kind of value (a mark, a sum of money, a date), used everywhere that value appears.
+- **A stored copy has one writer.** A value kept for speed or for history is written by the function that computes it and by nothing else, so the two cannot disagree.
+- **Guard it.** Where a stray is easy to write (a hand-made rounding, a local formatter), a lint fails the new one.
+
+In Altalerno a pupil's total read 20,32 on his copy and 20,33 in the class list: one calculation, rounded in two places by two rules.
+
+---
+
 ## Confirm the diagnosis before building the remedy
 
 State hypotheses freely, labelled as hypotheses. Build nothing on one — a fix, a hotfix branch, deploy instructions, a migration — until logs or a reproduction confirm the cause, unless Harley asks for it ahead of time. A remedy prepared for an unconfirmed diagnosis creates pressure to ship it (Harley, 2026-07-06).
