@@ -259,6 +259,7 @@ A screen carries what the person using it needs to act or to understand, and not
 - **A badge or pill marks something the person acts on or must notice.** « choisi par ta classe » beside a concours countdown is provenance, not information: noise.
 - **A tooltip answers the one question the person is likely to have, in a sentence.** It is not the place for the rules of the feature, its edge cases or how it is computed; those belong in the guide, if anywhere.
 - **Helper text that repeats the heading, the button or the obvious is removed.**
+- **Silence on a topic is better than logorrhea.** A point that needs a paragraph to be said correctly to the person is usually better not raised at all: say the short true thing, or nothing. A poll says « tes réponses sont anonymes », not who may read them and under what conditions (Harley, 2026-11-22).
 - When unsure whether an element earns its place, leave it out and say so in the report; adding it back is cheap, clutter accumulates.
 
 ---
