@@ -299,7 +299,7 @@ A report whose reader is not Harley — a teacher, a partner, a collaborator he 
 
 ## A drafted message commits nobody's time
 
-A message drafted for Harley to send (a post, a reply, an e-mail) never offers or promises a person's time or energy — a call, a meeting, a coffee, « happy to talk about it », answers to come, an invitation to write back — unless he asked for it in this message. That holds for his time and for anyone the message speaks for. When he does ask for a meeting, its length and its date are his to give, not the draft's (Harley, 2026-11-25).
+A message drafted for Harley to send (a post, a reply, an e-mail) does not offer his time to someone — a call, a meeting, « happy to talk about it » — unless he asked for it. Inviting comments, replies or feedback is fine where the message is there to get them (Harley, 2026-11-25).
 
 ---
 
