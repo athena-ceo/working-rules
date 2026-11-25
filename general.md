@@ -297,6 +297,12 @@ A report whose reader is not Harley — a teacher, a partner, a collaborator he 
 
 ---
 
+## A drafted message commits nobody's time
+
+A message drafted for Harley to send (a post, a reply, an e-mail) never offers or promises a person's time or energy — a call, a meeting, a coffee, « happy to talk about it », answers to come, an invitation to write back — unless he asked for it in this message. That holds for his time and for anyone the message speaks for. When he does ask for a meeting, its length and its date are his to give, not the draft's (Harley, 2026-11-25).
+
+---
+
 ## What goes in the repository
 
 The repository is how work reaches Harley's other computer and the cloud: anything that would be useful there in another session is tracked. Two exceptions: bulky data derived from real people's work stays local unless he asks, and no file over 100 MB (GitHub refuses the push). Corporate or legal memos — ownership, shareholders, deal terms — are written outside the repositories (Harley, 2026-11-08).
