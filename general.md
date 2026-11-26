@@ -287,6 +287,12 @@ This rule applies to user-facing questions only. Internal commit messages, CHANG
 
 ---
 
+## No commitments on Harley's behalf
+
+Nothing Claude writes or does commits Harley to anything he has not agreed to first. A draft written for him to send, a message, a reply or a document offers no help, promises no work, accepts no deadline and makes no undertaking in his name unless he asked for it; it reports, asks or proposes, and he decides what to offer. When a commitment seems useful, suggest it to him separately, outside the draft (Harley, 2026-11-26).
+
+---
+
 ## Reports for someone else are Word files
 
 A report whose reader is not Harley — a teacher, a partner, a collaborator he will pass it on to — is delivered as a `.docx`, not Markdown. Markdown is for internal notes, plans and handoff documents. A report that contains people's names or marks stays a local file and is not published anywhere.
