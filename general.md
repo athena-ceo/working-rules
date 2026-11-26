@@ -289,7 +289,7 @@ This rule applies to user-facing questions only. Internal commit messages, CHANG
 
 ## No commitments on Harley's behalf
 
-Nothing Claude writes or does commits Harley to anything he has not agreed to first. A draft written for him to send, a message, a reply or a document offers no help, promises no work, accepts no deadline and makes no undertaking in his name unless he asked for it; it reports, asks or proposes, and he decides what to offer. When a commitment seems useful, suggest it to him separately, outside the draft (Harley, 2026-11-26).
+Nothing Claude writes or does commits Harley to anything he has not agreed to first. A draft written for him to send (a post, a reply, an e-mail, a document) offers no help, promises no work, offers none of his time (a call, a meeting, « happy to talk about it »), accepts no deadline and makes no undertaking in his name unless he asked for it. It reports, asks or proposes, and he decides what to offer. Inviting comments, replies or feedback is fine where the message is there to get them. When a commitment seems useful, suggest it to him separately, outside the draft (Harley, 2026-11-25, 2026-11-26).
 
 ---
 
@@ -300,12 +300,6 @@ A report whose reader is not Harley — a teacher, a partner, a collaborator he 
 - **A delivered version is never overwritten.** A new build of a deliverable that has been shown or sent to someone is a new versioned file (`name-vN-YYYY-MM-DD.ext`, in a `versions/` folder). A draft superseded before anyone saw it is replaced, not kept beside (Harley, 2026-09-09, 2026-10-11).
 - **A document sent for validation is read as an overview.** Lead with the summary, the figures and a few representative examples; the full list is an appendix for drilling down, not the thing to validate.
 - **A record of a meeting holds what was said, and by whom.** Inferred motives, provenance or competitive framing are left out or labelled as hypothesis, and a later document checks that a claim is a recorded statement before building on it (Harley, 2026-09-12).
-
----
-
-## A drafted message commits nobody's time
-
-A message drafted for Harley to send (a post, a reply, an e-mail) does not offer his time to someone — a call, a meeting, « happy to talk about it » — unless he asked for it. Inviting comments, replies or feedback is fine where the message is there to get them (Harley, 2026-11-25).
 
 ---
 
