@@ -328,6 +328,12 @@ set). The prefix goes on a session's name when it is first named or renamed,
 and on every session started from it, whose machine is where it will run:
 « (P) Statistiques IA ».
 
+**Check the name in the first turn.** The app often names a session itself,
+from its first message, and nothing then reminds anyone: in that first turn,
+look at the session's name and, if the prefix is missing, add it — even when
+the turn is urgent (Harley, 2026-11-27: an incident session kept the app's
+« Stop mass grading incident » all day).
+
 ## Where a lasting instruction lives
 
 An agent's memory stays on the machine that wrote it; another computer, a cloud session or a teammate never sees it. So an instruction that should hold everywhere goes in a file that travels:
