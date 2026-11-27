@@ -309,6 +309,25 @@ The repository is how work reaches Harley's other computer and the cloud: anythi
 
 ---
 
+## A session's name says where it runs
+
+Every session's name starts with the machine it runs on, so that the sidebar
+and a list of sessions show at a glance which computer holds its files
+(Harley, 2026-11-27):
+
+- **(A)** a MacBook Air;
+- **(P)** a MacBook Pro;
+- **(C)** the cloud;
+- **(O)** anything else.
+
+Read the machine, do not guess it: on a Mac, the « Model Name » that
+`system_profiler SPHardwareDataType` prints (« MacBook Air », « MacBook Pro »),
+not the computer's own name, which anyone can change. A cloud session is one
+not running on a computer of Harley's (for Claude Code, `CLAUDE_CODE_REMOTE` is
+set). The prefix goes on a session's name when it is first named or renamed,
+and on every session started from it, whose machine is where it will run:
+« (P) Statistiques IA ».
+
 ## Where a lasting instruction lives
 
 An agent's memory stays on the machine that wrote it; another computer, a cloud session or a teammate never sees it. So an instruction that should hold everywhere goes in a file that travels:
